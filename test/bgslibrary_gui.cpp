@@ -18,11 +18,7 @@ along with BGSLibrary.  If not, see <http://www.gnu.org/licenses/>.
 
 int main(int argc, char *argv[])
 {
-  std::cout << "--------------------------------------------" << std::endl;
-  std::cout << "Background Subtraction Library v2.0.0       " << std::endl;
-  std::cout << "https://github.com/andrewssobral/bgslibrary " << std::endl;
-  std::cout << "by:                                         " << std::endl;
-  std::cout << "Andrews Sobral (andrewssobral@gmail.com)    " << std::endl;
+  std::cout << "Background Subtraction Library v1.0.0       " << std::endl;
   std::cout << "--------------------------------------------" << std::endl;
   std::cout << "Using OpenCV version " << CV_VERSION << std::endl;
 

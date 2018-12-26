@@ -25,54 +25,8 @@ namespace bgslibrary
 
   IBGS* get_alg(std::string alg_name) {
     map_ibgs map;
-    map["FrameDifference"] = &createInstance<FrameDifference>;
-    map["StaticFrameDifference"] = &createInstance<StaticFrameDifference>;
-    map["WeightedMovingMean"] = &createInstance<WeightedMovingMean>;
-    map["WeightedMovingVariance"] = &createInstance<WeightedMovingVariance>;
-#if CV_MAJOR_VERSION == 2
-    map["MixtureOfGaussianV1"] = &createInstance<MixtureOfGaussianV1>; // only for OpenCV 2.x
-#endif
-    map["MixtureOfGaussianV2"] = &createInstance<MixtureOfGaussianV2>;
-    map["AdaptiveBackgroundLearning"] = &createInstance<AdaptiveBackgroundLearning>;
-    map["AdaptiveSelectiveBackgroundLearning"] = &createInstance<AdaptiveSelectiveBackgroundLearning>;
-#if CV_MAJOR_VERSION == 2 && CV_MINOR_VERSION >= 4 && CV_SUBMINOR_VERSION >= 3
-    map["GMG"] = &createInstance<GMG>; // only for OpenCV >= 2.4.3
-#endif
-#if CV_MAJOR_VERSION == 3
-    map["KNN"] = &createInstance<KNN>; // only on OpenCV 3.x
-#endif
-    map["DPAdaptiveMedian"] = &createInstance<DPAdaptiveMedian>;
-    map["DPGrimsonGMM"] = &createInstance<DPGrimsonGMM>;
-    map["DPZivkovicAGMM"] = &createInstance<DPZivkovicAGMM>;
-    map["DPMean"] = &createInstance<DPMean>;
-    map["DPWrenGA"] = &createInstance<DPWrenGA>;
-    map["DPPratiMediod"] = &createInstance<DPPratiMediod>;
-    map["DPEigenbackground"] = &createInstance<DPEigenbackground>;
-    map["DPTexture"] = &createInstance<DPTexture>;
-    map["T2FGMM_UM"] = &createInstance<T2FGMM_UM>;
-    map["T2FGMM_UV"] = &createInstance<T2FGMM_UV>;
-    map["T2FMRF_UM"] = &createInstance<T2FMRF_UM>;
-    map["T2FMRF_UV"] = &createInstance<T2FMRF_UV>;
-    map["FuzzySugenoIntegral"] = &createInstance<FuzzySugenoIntegral>;
-    map["FuzzyChoquetIntegral"] = &createInstance<FuzzyChoquetIntegral>;
-    map["MultiLayer"] = &createInstance<MultiLayer>;
-    map["PixelBasedAdaptiveSegmenter"] = &createInstance<PixelBasedAdaptiveSegmenter>;
-    map["LBSimpleGaussian"] = &createInstance<LBSimpleGaussian>;
+
     map["LBFuzzyGaussian"] = &createInstance<LBFuzzyGaussian>;
-    map["LBMixtureOfGaussians"] = &createInstance<LBMixtureOfGaussians>;
-    map["LBAdaptiveSOM"] = &createInstance<LBAdaptiveSOM>;
-    map["LBFuzzyAdaptiveSOM"] = &createInstance<LBFuzzyAdaptiveSOM>;
-    map["LBP_MRF"] = &createInstance<LBP_MRF>;
-    map["VuMeter"] = &createInstance<VuMeter>;
-    map["KDE"] = &createInstance<KDE>;
-    map["IndependentMultimodal"] = &createInstance<IndependentMultimodal>;
-    map["MultiCue"] = &createInstance<MultiCue>;
-    map["SigmaDelta"] = &createInstance<SigmaDelta>;
-    map["SuBSENSE"] = &createInstance<SuBSENSE>;
-    map["LOBSTER"] = &createInstance<LOBSTER>;
-    map["PAWCS"] = &createInstance<PAWCS>;
-    map["TwoPoints"] = &createInstance<TwoPoints>;
-    map["ViBe"] = &createInstance<ViBe>;
 
     return map[alg_name]();
   }
@@ -80,54 +34,9 @@ namespace bgslibrary
   QStringList get_algs_name()
   {
     QStringList stringList;
-    stringList.append("FrameDifference");
-    stringList.append("StaticFrameDifference");
-    stringList.append("WeightedMovingMean");
-    stringList.append("WeightedMovingVariance");
-#if CV_MAJOR_VERSION == 2
-    stringList.append("MixtureOfGaussianV1"); // only for OpenCV 2.x
-#endif
-    stringList.append("MixtureOfGaussianV2");
-    stringList.append("AdaptiveBackgroundLearning");
-    stringList.append("AdaptiveSelectiveBackgroundLearning");
-#if CV_MAJOR_VERSION == 2 && CV_MINOR_VERSION >= 4 && CV_SUBMINOR_VERSION >= 3
-    stringList.append("GMG"); // only for OpenCV >= 2.4.3
-#endif
-#if CV_MAJOR_VERSION == 3
-    stringList.append("KNN"); // only on OpenCV 3.x
-#endif
-    stringList.append("DPAdaptiveMedian");
-    stringList.append("DPGrimsonGMM");
-    stringList.append("DPZivkovicAGMM");
-    stringList.append("DPMean");
-    stringList.append("DPWrenGA");
-    stringList.append("DPPratiMediod");
-    stringList.append("DPEigenbackground");
-    stringList.append("DPTexture");
-    stringList.append("T2FGMM_UM");
-    stringList.append("T2FGMM_UV");
-    stringList.append("T2FMRF_UM");
-    stringList.append("T2FMRF_UV");
-    stringList.append("FuzzySugenoIntegral");
-    stringList.append("FuzzyChoquetIntegral");
-    stringList.append("MultiLayer");
-    stringList.append("PixelBasedAdaptiveSegmenter");
-    stringList.append("LBSimpleGaussian");
+
     stringList.append("LBFuzzyGaussian");
-    stringList.append("LBMixtureOfGaussians");
-    stringList.append("LBAdaptiveSOM");
-    stringList.append("LBFuzzyAdaptiveSOM");
-    stringList.append("LBP_MRF");
-    stringList.append("VuMeter");
-    stringList.append("KDE");
-    stringList.append("IndependentMultimodal");
-    stringList.append("MultiCue");
-    stringList.append("SigmaDelta");
-    stringList.append("SuBSENSE");
-    stringList.append("LOBSTER");
-    stringList.append("PAWCS");
-    stringList.append("TwoPoints");
-    stringList.append("ViBe");
+
     return stringList;
   }
 }
@@ -146,7 +55,7 @@ MainWindow::MainWindow(QWidget *parent) :
   QStringListModel* listModel = new QStringListModel(bgslibrary::get_algs_name(), NULL);/*初始化方法列表种的值*/
   listModel->sort(0);
   ui->listView_algorithms->setModel(listModel);
-  QModelIndex index = listModel->index(10);
+  QModelIndex index = listModel->index(0);
   ui->listView_algorithms->selectionModel()->select(index, QItemSelectionModel::Select);
 }
 

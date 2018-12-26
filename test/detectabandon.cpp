@@ -98,15 +98,15 @@ void Detect(cv::Mat &frame, cv::Mat &bg, std::vector<incomeroi> &incomerois)
       uchar *segm = segment.ptr<uchar>(row);
       for (int col = 0; col < frame.cols; col++)
       {
-        segm[col] = abs(bgrow[col] - prow[col]);
-        if (segm[col] < 50)
-        {
-          segm[col] = 0;
-        }
-        else
-        {
-          segm[col] = 255;
-        }
+//        segm[col] = abs(bgrow[col] - prow[col]);
+//        if (segm[col] < 50)
+//        {
+//          segm[col] = 0;
+//        }
+//        else
+//        {
+//          segm[col] = 255;
+//        }
       }
     }
   }
